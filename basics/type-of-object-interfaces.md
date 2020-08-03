@@ -155,6 +155,13 @@ let tom: Person = {
 另外，在报错信息中可以看出，此时 `{ name: 'Tom', age: 25, gender: 'male' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; gender: string; }`，这是联合类型和接口的结合。
 
 一个接口中只能定义一个任意属性。如果接口中有多个类型的属性，则可以在任意属性中使用联合类型：
+
+勘误:
+```ts 
+ (property) Person.age?: number | undefined
+Property 'age' of type 'number | undefined' is not assignable to string index type 'string | number'.
+```
+
 ```ts
 interface Person {
     name: string;
